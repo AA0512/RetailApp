@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: RetailApp
+    env: java
+    plan: free
+    buildCommand: ./mvnw clean install
+    startCommand: java -jar target/*.jar
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://dpg-d1cp5aemcj7s73b75k4g-a.oregon-postgres.render.com:5432/retaildb_sh1v
+      - key: SPRING_DATASOURCE_USERNAME
+        value: retaildb_sh1v_user
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: Nxe3nyqM2AyEIyH0mviGUpSSCo8z6O3m
+    rootDir: retailapp
